@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let quantidade = 0;
 
     // Função para renderizar o carrinho
-    function renderizarCarrinho() {
+    function renderizarCarrinho() {  
         itensCarrinho.innerHTML = '';
         total = 0;
         quantidade = 0;
@@ -121,30 +121,34 @@ document.addEventListener('DOMContentLoaded', function() {
             pesquisarProdutos();
         }
     });
-});
 
 
 
 
 
+    
+    document.getElementById('finalizar-btn').addEventListener('click', function() {
+        let mensagem = 'Pedido MK Raçoes:%0A%0A';
 
-document.getElementById('finalizar-btn').addEventListener('click', function() {
-    let messagem = 'Mk Rações.%0A%0A';
-    carrinho.forEach(item => {
-        messagem += `${item.nome} - ${item.descricao} - R$ ${item.preco} - Quantidade: ${item.qtd}%0A`;
+        carrinho.forEach(item => {
+            mensagem += `• ${item.nome} (${item.descricao})%0A  Quantidade: ${item.qtd}x %0A  ${item.preco}%0A%0A`;
+        });
+
+        // Pegue o total
+        const total = document.getElementById('total-carrinho').innerText.replace('R$ ', '');
+        mensagem += `Total: R$ ${total}%0A`;
+
+        // Pegue nome e endereço
+        const nomeCliente = document.getElementById('nome-cliente').value;
+        const endereco = document.getElementById('endereco').value;
+        mensagem += `Nome: ${nomeCliente}%0AEndereço: ${endereco}`;
+
+        // Monta o link do WhatsApp
+        const telefone = "559996458528";
+        const url = `https://wa.me/${telefone}?text=${mensagem}`;
+
+        // Fecha o modal e abre o WhatsApp
+        document.getElementById('carrinho-modal').style.display = 'none';
+        window.open(url, '_blank');
     });
-
-    const total = document.getElementById('total-carrinho').innerText.replace('R$', '');
-    messagem += `%0ATotal: R$ ${total}%0A%0A`;
-
-    const nomeCliente = document.getElementById('nome-cliente').value;
-    const endereco = document.getElementById('endereco').value;
-    messagem += `Nome: ${nomeCliente}%0A`;
-    messagem += `Endereço: ${endereco}%0A`;
-
-    const telefone = '5599996458528'; // Telefone do WhatsApp
-    const url = `https://wa.me/${telefone}?text=${messagem}`;
-
-    document.getElementById('carrinho-modal').style.display = 'none';
-    window.open(url, '_blank');
 });
