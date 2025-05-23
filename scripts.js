@@ -122,3 +122,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+
+
+
+
+document.getElementById('finalizar-btn').addEventListener('click', function() {
+    let messagem = 'Mk Rações.%0A%0A';
+    carrinho.forEach(item => {
+        messagem += `${item.nome} - ${item.descricao} - R$ ${item.preco} - Quantidade: ${item.qtd}%0A`;
+    });
+
+    const total = document.getElementById('total-carrinho').innerText.replace('R$', '');
+    messagem += `%0ATotal: R$ ${total}%0A%0A`;
+
+    const nomeCliente = document.getElementById('nome-cliente').value;
+    const endereco = document.getElementById('endereco').value;
+    messagem += `Nome: ${nomeCliente}%0A`;
+    messagem += `Endereço: ${endereco}%0A`;
+
+    const telefone = '5599996458528'; // Telefone do WhatsApp
+    const url = `https://wa.me/${telefone}?text=${messagem}`;
+
+    document.getElementById('carrinho-modal').style.display = 'none';
+    window.open(url, '_blank');
+});
