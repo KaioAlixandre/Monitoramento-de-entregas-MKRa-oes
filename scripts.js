@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let mensagem = '*Pedido MK Raçoes:*%0A%0A';
 
         carrinho.forEach(item => {
-            mensagem += `• ${item.nome} (${item.descricao})%0A  *Quantidade:* ${item.qtd}x %0A  ${item.preco}%0A%0A`;
+            mensagem += `• ${item.nome}  *Quantidade:* ${item.qtd}x %0A  ${item.preco}%0A%0A`;
         });
 
         // Pegue o total
