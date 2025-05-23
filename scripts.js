@@ -128,10 +128,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
     document.getElementById('finalizar-btn').addEventListener('click', function() {
-        let mensagem = 'Pedido MK Raçoes:%0A%0A';
+        let mensagem = '*Pedido MK Raçoes:*%0A%0A';
 
         carrinho.forEach(item => {
-            mensagem += `• ${item.nome} (${item.descricao})%0A  Quantidade: ${item.qtd}x %0A  ${item.preco}%0A%0A`;
+            mensagem += `• ${item.nome} (${item.descricao})%0A  *Quantidade:* ${item.qtd}x %0A  ${item.preco}%0A%0A`;
         });
 
         // Pegue o total
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mensagem += `Nome: ${nomeCliente}%0AEndereço: ${endereco}`;
 
         // Monta o link do WhatsApp
-        const telefone = "559996458528";
+        const telefone = "5599984227966";
         const url = `https://wa.me/${telefone}?text=${mensagem}`;
 
         // Fecha o modal e abre o WhatsApp
