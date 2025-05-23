@@ -1,0 +1,17 @@
+{
+  "name": "nova-pasta",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tailwindcss -i ./styles/style.css -o ./styles/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17"
+  }
+}

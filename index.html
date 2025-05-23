@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/output.css">
+    <link rel="stylesheet" href="scripts/scripts.js">
+    <script src="scripts/scripts.js"></script>
+    <style>
+        body,html {
+            margin: 0;
+            padding: 0; 
+        }
+    </style>
+    
+</head>
+<body>
+    <header class="w-full bg-orange-600 text-black p-4 flex justify-between items-center">
+        <div class="flex items-center gap-2 justify-between w-full">
+            <h1 class="text-2xl font-bold">MK Raçoes</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="Search..." class="p-1 rounded">
+            <button class="bg-green-700 h-8 px-5 text-white rounded hover:bg-green-800">Buscar</button>
+            </div> 
+        </div>
+    </header>
+     <!--Fim da header-->
+    <h2 class="text-center text-2xl font-bold mt-10 md-8">Produtos</h2>
+     
+    <div id="menu">
+        <main class="grid grid-cols-1 md:grid-cols-2  gap-3 p-4 md:gap-10 mx-auto max-w-7xl mb-16 px-2">
+            
+            
+            <div class="flex gap-2 border border-gray-200 rounded-xl shadow-lg bg-white p-4">
+                <img src="img/Agua.jpg" alt="Produto 1" class="h-40 w-40 object-cover rounded-md">
+                <div class="flex flex-col flex-1 justify-between">
+                <div>
+                    <p class="font font-bold text-1xl ">Agua DaFonte 20L</p>
+                    <p class="text-sm mt-2">Agua natural de 20L para filtros.</p>
+                </div>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                    <p class="font-bold text-lg">
+                    <span class="price text-green-600" id="price-pizza-cogumelo">R$ 20.00</span>
+                    </p>
+                    <!-- Pizza de cogumelo -->
+                    <div class="flex items-center gap-2">
+                    
+                    <button  class="justify-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex">
+                            Adicionar
+                        </button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="flex gap-2 border border-gray-200 rounded-xl shadow-lg bg-white p-4">
+                        <img src="img/br-11134207-23020-swke9s8ejjnv29.jpeg" alt="Produto 1" class="h-40 w-40 object-cover rounded-md">
+                <div class="flex flex-col flex-1 justify-between">
+                <div>
+                    <p class="font font-bold text-1xl ">Agua DaFonte 500ml</p>
+                    <p class="text-sm mt-2">Agua natural de fardo com 12 unidades.</p>
+                </div>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                    <p class="font-bold text-lg">
+                    <span class="price text-green-600" id="price-pizza-cogumelo">R$ 10.00</span>
+                    </p>
+                    <!-- Pizza de cogumelo -->
+                    <div class="flex items-center gap-2">
+                    
+                    <button class="justify-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex">
+                            Adicionar
+                        </button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="flex gap-2 border border-gray-200 rounded-xl shadow-lg bg-white p-4">
+                        <img src="img/d86d6cd13c6bd8560baa6075643bf737.jpeg" alt="Produto 1" class="h-40 w-40 object-cover rounded-md">
+                <div class="flex flex-col flex-1 justify-between">
+                <div>
+                    <p class="font font-bold text-1xl ">Saco de carvao de madeira</p>
+                    <p class="text-sm mt-2">Saco com 25kg.</p>
+                </div>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                    <p class="font-bold text-lg">
+                    <span class="price text-green-600" id="price-pizza-cogumelo">R$ 25.00</span>
+                    </p>
+                    <!-- Pizza de cogumelo -->
+                    <div class="flex items-center gap-2">
+                    
+                    <button class="justify-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex">
+                            Adicionar
+                        </button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="flex gap-2 border border-gray-200 rounded-xl shadow-lg bg-white p-4">
+                        <img src="img/saco-carvao-10-kg-especial_1_1200.jpg" alt="Produto 1" class="h-40 w-40 object-cover rounded-md">
+                <div class="flex flex-col flex-1 justify-between">
+                <div>
+                    <p class="font font-bold text-1xl ">Saco de carvao de coco</p>
+                    <p class="text-sm mt-2">Saco com 25kg.</p>
+                </div>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                    <p class="font-bold text-lg">
+                    <span class="price text-green-600" id="price-pizza-cogumelo">R$ 30.00</span>
+                    </p>
+                    <!-- Pizza de cogumelo -->
+                    <div class="flex items-center gap-2">
+                    
+                    <button class="justify-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex">
+                            Adicionar
+                        </button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="flex gap-2 border border-gray-200 rounded-xl shadow-lg bg-white p-4">
+                        <img src="img/saco-de-milho-de-20-kg-926x926.png" alt="Produto 1" class="h-40 w-40 object-cover rounded-md">
+                <div class="flex flex-col flex-1 justify-between">
+                <div>
+                    <p class="font font-bold text-1xl ">Saco de milho</p>
+                    <p class="text-sm mt-2">Saco com 60kg.</p>
+                </div>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                    <p class="font-bold text-lg">
+                    <span class="price text-green-600" id="price-pizza-cogumelo">R$ 100.00</span>
+                    </p>
+                    <!-- Pizza de cogumelo -->
+                    <div class="flex items-center gap-2">
+                    
+                    <button class="justify-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex">
+                            Adicionar
+                        </button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="flex gap-2 border border-gray-200 rounded-xl shadow-lg bg-white p-4">
+                        <img src="img/248576.jpg" alt="Produto 1" class="h-40 w-40 object-cover rounded-md">
+                <div class="flex flex-col flex-1 justify-between">
+                <div>
+                    <p class="font font-bold text-1xl ">Bandinha de milho</p>
+                    <p class="text-sm mt-2">Meio saco com 30kg.</p>
+                </div>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                    <p class="font-bold text-lg">
+                    <span class="price text-green-600" id="price-pizza-cogumelo">R$ 50.00</span>
+                    </p>
+                    <!-- Pizza de cogumelo -->
+                    <div class="flex items-center gap-2">
+                    
+                    <button class="justify-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex">
+                            Adicionar
+                        </button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="flex gap-2 border border-gray-200 rounded-xl shadow-lg bg-white p-4">
+                <img src="img/milhoquebrado-500x500.jpg" alt="Produto 1" class="h-40 w-40 object-cover rounded-md">
+        <div class="flex flex-col flex-1 justify-between">
+          <div>
+            <p class="font font-bold text-1xl ">Bandinha de milho quebrado fino</p>
+            <p class="text-sm mt-2">Milho para porcos, saco com 30kg.</p>
+          </div>
+          <div class="flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">
+              <span class="price text-green-600" id="price-pizza-cogumelo">R$ 55.00</span>
+            </p>
+            <!-- Pizza de cogumelo -->
+            <div class="flex items-center gap-2">
+              
+              <button class="justify-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex">
+                    Adicionar
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="flex gap-2 border border-gray-200 rounded-xl shadow-lg bg-white p-4">
+                <img src="img/milhoquebrado-500x500.jpg" alt="Produto 1" class="h-40 w-40 object-cover rounded-md">
+        <div class="flex flex-col flex-1 justify-between">
+          <div>
+            <p class="font font-bold text-1xl ">Bandinha de milho quebrado grosso</p>
+            <p class="text-sm mt-2">Milho para galinhas, saco com 30kg.</p>
+          </div>
+          <div class="flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">
+              <span class="price text-green-600" id="price-pizza-cogumelo">R$ 55.00</span>
+            </p>
+            <!-- Pizza de cogumelo -->
+            <div class="flex items-center gap-2">
+              
+              <button class="justify-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex">
+                    Adicionar
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+           
+            <div  class="p-2 px-5 flex fixed bottom-5 right-5 z-50">
+            <button class="flex items-center gap-2 bg-green-600 text-white px-6 py-5 rounded hover:bg-green-700" id="cart-button">
+                <img src="img/cart.png" alt="Carrinho" class="h-6 w-6">
+                
+            </button>
+            <span style="margin-right: 13px; margin-top: 4px;" id="cart-count" class="absolute -top-2 -right-1 bg-red-500 text-white text-xs font-bold w-7 h-6 flex items-center justify-center rounded-full">
+                0
+            </span>
+            </div>
+            
+            
+      
+            
+        </main>
+    </div>
+
+    <divc class="w-full h-full top-5 left-0 bg-gray/50 fixed items-center justify-center z-[40]" id="cart-modal">
+        <div class="bg-white p-5 rounded-md md:min-w-[600px] max-h-[90vh] overflow-y-auto">
+            <div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- <footer class="bg-green-700 text-white text-center p-1">
+        <p>ORG: Marcos e Kaio</p>
+    </footer> -->
+</body>
+</html>
