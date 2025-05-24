@@ -691,10 +691,6 @@ video {
   top: 0px;
 }
 
-.right-20 {
-  right: 5rem;
-}
-
 .isolate {
   isolation: isolate;
 }
@@ -709,18 +705,6 @@ video {
 
 .z-\[99\] {
   z-index: 99;
-}
-
-.z-\[999\] {
-  z-index: 999;
-}
-
-.z-\[\] {
-  z-index: ;
-}
-
-.z-\[890\] {
-  z-index: 890;
 }
 
 .float-start {
@@ -2249,14 +2233,14 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .text-left {
