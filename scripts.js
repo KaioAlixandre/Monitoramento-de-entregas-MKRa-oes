@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const itensCarrinho = document.getElementById('itens-carrinho');
     const totalCarrinho = document.getElementById('total-carrinho');
     const cartCount = document.getElementById('cart-count');
+    const modalprod = document.getElementById('modal-produto');
+    const modalprodFechar = document.getElementById('fechar-modal-produto');
+    const adicionarBtn = document.getElementById('.adicionar-ao-carrinho');
 
     let carrinho = [];
     let total = 0;
@@ -55,6 +58,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function mostrarPopupSucesso() {
+    const popup = document.getElementById('popup-sucesso');
+    popup.classList.remove('hidden');
+    
+    // Oculta após 3 segundos
+    setTimeout(() => {
+        popup.classList.add('hidden');
+    }, 3000);
+}
+
+
     // Fechar modal do carrinho
     if (fecharBtn && modal) {
         fecharBtn.addEventListener('click', function() {
@@ -64,42 +78,67 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Adicionar produto ao carrinho
-    document.querySelectorAll('.adicionar-ao-carrinho').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            const card = btn.closest('.border');
-            if (!card) return;
+    const modalProduto = document.getElementById('modal-produto');
+const modalFechar = document.getElementById('modal-fechar');
+const modalAdicionar = document.getElementById('modal-adicionar');
+const modalQtd = document.getElementById('modal-quantidade');
+const modalNome = document.getElementById('modal-produto-nome');
+const modalDescricao = document.getElementById('modal-produto-descricao');
+const modalPreco = document.getElementById('modal-produto-preco');
 
-            const nomeElem = card.querySelector('p.font-bold');
-            const descricaoElem = card.querySelector('p.text-sm');
-            const precoElem = card.querySelector('.price');
-            const imgElem = card.querySelector('img');
+let produtoSelecionado = null;
 
-            if (!nomeElem || !descricaoElem || !precoElem || !imgElem) return;
+document.querySelectorAll('.adicionar-ao-carrinho').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        const card = btn.closest('.border');
+        if (!card) return;
 
-            const nome = nomeElem.innerText;
-            const descricao = descricaoElem.innerText;
-            const preco = precoElem.innerText;
-            const imgSrc = imgElem.src;
-            const valor = parseFloat(preco.replace('R$', '').replace(',', '.').trim());
+        const nome = card.querySelector('p.font-bold')?.innerText;
+        const descricao = card.querySelector('p.text-sm')?.innerText;
+        const preco = card.querySelector('.price')?.innerText;
+        const imgSrc = card.querySelector('img')?.src;
+        const valor = parseFloat(preco.replace('R$', '').replace(',', '.').trim());
 
-            // Verifica se o item já existe no carrinho
-            const existente = carrinho.find(item => item.nome === nome && item.descricao === descricao && item.preco === preco);
-            if (existente) {
-                existente.qtd += 1;
-            } else {
-                carrinho.push({
-                    nome,
-                    descricao,
-                    preco,
-                    imgSrc,
-                    valor,
-                    qtd: 1
-                });
-            }
+        produtoSelecionado = { nome, descricao, preco, imgSrc, valor };
 
-            renderizarCarrinho();
-        });
+        modalNome.innerText = nome;
+        modalDescricao.innerText = descricao;
+        modalPreco.innerText = preco;
+        modalQtd.value = 1;
+
+        modalProduto.classList.remove('hidden');
+        modalProduto.classList.add('flex');
     });
+});
+
+// Fechar modal
+modalFechar.addEventListener('click', () => {
+    modalProduto.classList.add('hidden');
+    modalProduto.classList.remove('flex');
+});
+
+// Adicionar ao carrinho com quantidade do modal
+modalAdicionar.addEventListener('click', () => {
+    const qtd = parseInt(modalQtd.value);
+    if (!qtd || qtd <= 0) return;
+
+    const existente = carrinho.find(item => item.nome === produtoSelecionado.nome && item.descricao === produtoSelecionado.descricao);
+    if (existente) {
+        existente.qtd += qtd;
+    } else {
+        carrinho.push({
+            ...produtoSelecionado,
+            qtd: qtd
+        });
+    }
+
+    renderizarCarrinho();
+    mostrarPopupSucesso();
+
+    modalProduto.classList.add('hidden');
+    modalProduto.classList.remove('flex');
+});
+
 
     // Função de pesquisa de produtos
     function pesquisarProdutos() {
@@ -144,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mensagem += `Nome: ${nomeCliente}%0AEndereço: ${endereco}`;
 
         // Monta o link do WhatsApp
-        const telefone = "5599984227966";
+        const telefone = "5599984604157";
         const url = `https://wa.me/${telefone}?text=${mensagem}`;
 
         // Fecha o modal e abre o WhatsApp
