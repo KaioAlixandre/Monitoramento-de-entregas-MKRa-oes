@@ -60,13 +60,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function mostrarPopupSucesso() {
     const popup = document.getElementById('popup-sucesso');
-    popup.classList.remove('hidden');
     
-    // Oculta após 3 segundos
+    // Mostra com transição
+    popup.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+    popup.classList.add('opacity-100', 'translate-y-0');
+
+    // Oculta depois de 3 segundos com transição reversa
     setTimeout(() => {
-        popup.classList.add('hidden');
+        popup.classList.remove('opacity-100', 'translate-y-0');
+        popup.classList.add('opacity-0', 'pointer-events-none');
     }, 3000);
 }
+
 
 
     // Fechar modal do carrinho
